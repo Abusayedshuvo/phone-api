@@ -13,31 +13,29 @@
   </head>
   <body>
     <main>
-      <div class="conatiner 2xl:px-20">
+      <div class="conatiner px-4 2xl:px-20 my-20">
         <h1 class="text-center text-3xl">Search your phone</h1>
         <div class="search text-center my-10">
           <input
+            id="search-input"
             type="text"
             placeholder="Search your phone"
             class="input input-bordered input-info w-full max-w-xs"
           />
-          <button class="btn btn-primary px-10">Search</button>
+          <button onclick="handleSearch()" class="btn btn-primary px-10">
+            Search
+          </button>
         </div>
-        <div id="allPhones" class="grid grid-cols-3">
-          <div class="border rounded-lg p-10 text-center">
-            <div class="bg-[#0d6dfd1a] p-10 rounded-lg">
-              <img src="" alt="" />
-            </div>
-            <div class="space-y-5 mt-5">
-              <p class="font-bold text-3xl">Iphone 13 Pro Max</p>
-              <p>
-                There are many variations of passages of available, but the
-                majority have suffered
-              </p>
-              <p class="font-bold text-2xl">$999</p>
-              <button class="btn btn-primary px-10">Show Details</button>
-            </div>
-          </div>
+        <div id="loading" class="text-center my-52 hidden">
+          <span class="loading loading-infinity loading-lg"></span>
+        </div>
+        <div
+          id="allPhones"
+          class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10"
+        ></div>
+
+        <div id="showAll" class="my-10 text-center hidden">
+          <button class="btn btn-neutral px-10">Show All</button>
         </div>
       </div>
     </main>
